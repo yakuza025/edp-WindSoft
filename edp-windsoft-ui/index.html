@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('ws.theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var resolved = (stored === 'light' || stored === 'dark')
+            ? stored
+            : (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', resolved);
+          document.documentElement.style.colorScheme = resolved;
+        } catch (e) {}
+      })();
+    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WindSoft Solutions — Enterprise Software & Live Demos</title>
+  <meta name="description" content="Interactive product demos from WindSoft Solutions" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%233b82f6'/%3E%3Ctext x='16' y='22' font-family='system-ui' font-size='16' font-weight='800' fill='white' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
+  <meta name="description" content="Explore WindSoft's enterprise software solutions — lending, ERP, HR, analytics, and more. Live interactive demos, detailed features, and one-click contact." />
+  <meta name="keywords" content="enterprise software, lending platform, ERP, HR software, analytics, business intelligence, WindSoft" />
+  <meta name="author" content="WindSoft Solutions" />
+  <meta name="theme-color" content="#0a0c0f" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WindSoft Solutions" />
+  <meta property="og:title" content="WindSoft Solutions — Enterprise Software & Live Demos" />
+  <meta property="og:description" content="Enterprise software built for scale. Explore lending, ERP, HR, analytics, and more — with interactive live demos and one-click contact." />
+  <meta property="og:url" content="https://windsoft.example" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WindSoft Solutions — Enterprise Software & Live Demos" />
+  <meta name="twitter:description" content="Enterprise software built for scale. Explore lending, ERP, HR, analytics, and more." />
+
+  <link rel="canonical" href="https://windsoft.example" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://windsoft.example/#org",
+        "name": "WindSoft Solutions",
+        "url": "https://windsoft.example",
+        "description": "Enterprise software solutions with live interactive demos.",
+        "email": "hello@windsoft.example",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hello@windsoft.example",
+          "availableLanguage": ["English"]
+        },
+        "sameAs": [
+          "https://linkedin.com/company/windsoft",
+          "https://twitter.com/windsoft",
+          "https://github.com/windsoft"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://windsoft.example/#website",
+        "url": "https://windsoft.example",
+        "name": "WindSoft Solutions",
+        "publisher": { "@id": "https://windsoft.example/#org" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+  <!--
+    ANALYTICS — uncomment after signing up.
+    Umami (privacy-first, no cookie banner):
+      1. Get your website-id from https://cloud.umami.is or your self-hosted instance
+      2. Uncomment the script below and replace YOUR-WEBSITE-ID
+      3. Optionally replace src with your self-hosted /script.js URL
+  -->
+  <!--
+  <script defer data-website-id="YOUR-WEBSITE-ID"
+          src="https://cloud.umami.is/script.js"></script>
+  -->
+  <!-- /analytics-placeholder -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

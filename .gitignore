@@ -1,0 +1,170 @@
+# ═══════════════════════════════════════════════════════════════════
+# WindSoft Monorepo — root .gitignore
+# Applies to both `edp-windsoft-api/` and `edp-windsoft-ui/`
+# ═══════════════════════════════════════════════════════════════════
+
+# ── SECRETS — CRITICAL, never commit ────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+!*.key.example
+secrets/
+.secrets/
+
+# ── Dependencies (both projects) ────────────────────────────────
+node_modules/
+.pnp
+.pnp.*
+.yarn/
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnpm-store/
+**/node_modules/
+**/.pnp.*
+
+# ── Build output ────────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+out/
+.vite/
+.vite-inspect/
+.vite-cache/
+**/dist/
+**/build/
+**/out/
+**/.vite/
+
+# ── Logs ────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pm2/
+pm2.log
+**/logs/
+**/*.log
+
+# ── Databases (local SQLite, dumps) ─────────────────────────────
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
+*.dump
+*.sql.gz
+!**/migrations/*.sql
+!**/schema.sql
+
+# ── Backups from install scripts ────────────────────────────────
+*.bak
+*.backup
+*.orig
+*.swp
+*.swo
+*~
+*.premount.bak
+*.preorder.bak
+*.sql.bak
+**/*.bak
+**/*.premount.bak
+**/*.preorder.bak
+
+# ── Runtime / temp ──────────────────────────────────────────────
+tmp/
+temp/
+.cache/
+.parcel-cache/
+.nyc_output/
+coverage/
+.nyc_output.json
+*.lcov
+uploads/
+public/uploads/
+.storage/
+**/tmp/
+**/coverage/
+
+# ── PM2 dumps (keep config, ignore runtime) ─────────────────────
+.pm2/
+.pm2/*
+!/.pm2/dump.pm2
+**/.pm2/
+
+# ── Testing artifacts ───────────────────────────────────────────
+.nyc_output/
+test-results/
+cypress/videos/
+cypress/screenshots/
+playwright-report/
+playwright/.cache/
+test-results.xml
+
+# ── IDE / editors ───────────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.iml
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+.settings/
+**/.vscode/
+**/.idea/
+
+# ── OS junk ─────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+**/.DS_Store
+
+# ── Caches ──────────────────────────────────────────────────────
+.cache/
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+**/.cache/
+
+# ── PWA generated (sw maps, workbox build) ──────────────────────
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.js.map
+**/public/sw.js.map
+
+# ── Generated TS types / caches ─────────────────────────────────
+*.tsbuildinfo
+**/*.tsbuildinfo
+
+# ── Logs specific to this project ───────────────────────────────
+edp-windsoft-api/npm-debug.log
+edp-windsoft-ui/npm-debug.log
+
+# ── Keep these even though they match ignore rules ──────────────
+!.env.example
+!**/migrations/*.sql
+!**/schema.sql
+!package.json
+!package-lock.json
+!yarn.lock
+!pnpm-lock.yaml
